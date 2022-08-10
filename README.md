@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# 🚧This app is under development🚧<br/>
 ## Description
-🚧This app is under development🚧<br/>
 
 
 
@@ -22,31 +22,31 @@ Acceptance Criteria
 * It's done when the `/api/movie/:id` route deletes a route when tested using Insomnia.
 
 
-  ## Table of Contents
-  - [Usage](#usage)
-  - [Contribution](#contribution)
-  - [Tests](#tests)
-  - [License](#license)
-  - [Contact](#contact)
-  
-
-  
-
-  ## Usage
-
-  
+## Table of Contents
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Tests](#tests)
+- [License](#license)
+- [Contact](#contact)
 
 
-  ## Contribution
-  You can fork the repo at https://github.com/jroller33/Express.js-Note-Taker
-  
-  ## Tests
-  Using [Insomnia](https://insomnia.rest/) for API testing.
 
-  ## License
-  This project is licensed under the MIT License. <br/>
-  https://www.mit.edu/~amini/LICENSE.md
 
-  ## Contact
-  GitHub: https://github.com/jroller33 
-  
+## Usage
+
+
+
+
+## Contribution
+You can fork the repo [here](https://github.com/jroller33/MySQL-Database-with-REST-API)
+
+## Tests
+Using [Insomnia](https://insomnia.rest/) for API testing.
+
+## License
+This project is licensed under the MIT License. <br/>
+https://www.mit.edu/~amini/LICENSE.md
+
+## Contact
+GitHub: https://github.com/jroller33 
+
