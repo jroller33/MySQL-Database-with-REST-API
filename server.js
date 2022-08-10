@@ -34,7 +34,7 @@ app.get('/api/movies', (req, res) => {
   });
   
 // create a movie
-app.post('/api/new-movie', ({ body }, res) => {      // destructuring req, res ({ body }, res)
+app.post('/api/new-movie', ({ body }, res) => {      // destructuring: ({ body }, res) = (req, res)
   const sql = `INSERT INTO movies (movie_name)
     VALUES (?)`;
   const params = [body.movie_name];
