@@ -11,12 +11,28 @@ const db = mysql.createConnection(
     {
       host: 'localhost',
       user: 'root',
-      password: 'Aquar1aN^mAG33$0121',  // add mysql password here
+      password: '',  // add mysql password here
       database: 'movies_db'
     },
     console.log(`Connected to the movies_db database.`)
   );
   
+  // read all movies
+  app.get('/api/movies', (req, res) => {
+      const sql = `SELECT id, movie_name AS title FROM movies`;
+      
+      db.query(sql, (err, rows) => {
+        if (err) {
+          res.status(500).json({ error: err.message });
+           return;
+        }
+        res.json({
+          message: 'success',
+          data: rows
+        });
+      });
+    });
+    
   // create a movie
   app.post('/api/new-movie', ({ body }, res) => {
     const sql = `INSERT INTO movies (movie_name)
@@ -31,22 +47,6 @@ const db = mysql.createConnection(
       res.json({
         message: 'success',
         data: body
-      });
-    });
-  });
-  
-// read all movies
-app.get('/api/movies', (req, res) => {
-    const sql = `SELECT id, movie_name AS title FROM movies`;
-    
-    db.query(sql, (err, rows) => {
-      if (err) {
-        res.status(500).json({ error: err.message });
-         return;
-      }
-      res.json({
-        message: 'success',
-        data: rows
       });
     });
   });
@@ -98,7 +98,7 @@ app.get('/api/movies', (req, res) => {
         res.status(400).json({ error: err.message });
       } else if (!result.affectedRows) {
         res.json({
-          message: 'Movie not found'
+          message: 'movie not found'
         });
       } else {
         res.json({
@@ -110,14 +110,11 @@ app.get('/api/movies', (req, res) => {
     });
   });
   
-
-
-// 404 not found - default res for any other req
-app.use((req, res) => {
+  app.use((req, res) => {   // 404 - default res for any other req
     res.status(404).end();
   });
   
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
   
